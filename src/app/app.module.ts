@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
 // Import Components owner
 import { AppComponent } from './app.component';
@@ -14,6 +15,7 @@ import { RegisterComponent } from './register/register.component';
 // Import Services owner
 import { AuthService } from './services/auth.service';
 import { ErrorInterceptorProvide } from './services/error.interceptor';
+import { AlertifyService } from './services/alertify.service';
 
 @NgModule({
   declarations: [
@@ -26,11 +28,13 @@ import { ErrorInterceptorProvide } from './services/error.interceptor';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BsDropdownModule.forRoot()
   ],
   providers: [
     AuthService,
-    ErrorInterceptorProvide
+    ErrorInterceptorProvide,
+    AlertifyService
   ],
   bootstrap: [AppComponent]
 })

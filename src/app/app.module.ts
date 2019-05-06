@@ -8,11 +8,12 @@ import { HttpClientModule } from '@angular/common/http';
 // Import Components owner
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
+import { HomeComponent } from './home/home.component';
+import { RegisterComponent } from './register/register.component';
 
 // Import Services owner
 import { AuthService } from './services/auth.service';
-import { HomeComponent } from './home/home.component';
-import { RegisterComponent } from './register/register.component';
+import { ErrorInterceptorProvide } from './services/error.interceptor';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { RegisterComponent } from './register/register.component';
     FormsModule
   ],
   providers: [
-    AuthService
+    AuthService,
+    ErrorInterceptorProvide
   ],
   bootstrap: [AppComponent]
 })
